@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/signupbg">
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:text="Login Here"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="cursive"
+        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:hint="Enter Your Name: "
+        android:textColorHint="@color/white">
+    </EditText>
+
+    <EditText
+        android:id="@+id/Emailid"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:hint="Enter Your Email-ID: "
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textColorHint="@color/white">
+    </EditText>
+
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:hint="Enter Your Password: "
+        android:textColorHint="@color/whitegit">
+    </EditText>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:background="@android:color/darker_gray"
+        android:text="LOGIN"/>
+
+
+</LinearLayout>
