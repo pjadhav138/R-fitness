@@ -1,2 +1,6 @@
-package com.example.myapplication;public class Splashactivity {
+package com.example.myapplication;
+
+import android.app.Activity;
+
+public class Splashactivity extends Activity {
 }
