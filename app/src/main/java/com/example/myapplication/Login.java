@@ -17,7 +17,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        username = findViewById(R.id.username);
+        username = findViewById(R.id.name);
         email = findViewById(R.id.email);
 
         submit = findViewById(R.id.submit);
@@ -29,9 +29,6 @@ public class Login extends AppCompatActivity {
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("username",strusername);
                 editor.commit();
-
-
-
             }
         });
         String strusername = getIntent().getStringExtra("username");

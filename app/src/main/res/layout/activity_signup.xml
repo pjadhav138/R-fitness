@@ -1,95 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/signupwhite">
+    >
 
-
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:text="SignUp Form"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:fontFamily="cursive"
-        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum">
-
-    </TextView>
-
-    <EditText
-        android:id="@+id/name"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:hint="Enter Your Name: "
-        android:textColorHint="@color/black">
-    </EditText>
+        android:layout_height="match_parent"
+        android:background="@drawable/signupwhite"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/Emailid"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:hint="Enter Your Email-ID: "
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textColorHint="@color/black">
-    </EditText>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:text="SignUp Form"
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="cursive"
+            android:singleLine="true"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum">
 
-    <EditText
-        android:id="@+id/contactno"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:hint="Enter Your Contact-No: "
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textColorHint="@color/black">
-    </EditText>
+        </TextView>
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:hint="Enter Your Password: "
-        android:textColorHint="@color/black">
-    </EditText>
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:hint="Enter Your Name: "
+            android:singleLine="true"
+            android:textColorHint="@color/black">
+        </EditText>
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:hint="Enter Your UserName: "
+            android:singleLine="true"
+            android:textColorHint="@color/black">
+        </EditText>
 
-    <EditText
-        android:id="@+id/confirmpassword"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:hint="Confirm Your Password: "
-        android:textColorHint="@color/black">
-    </EditText>
+        <EditText
+            android:id="@+id/Emailid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:hint="Enter Your Email-ID: "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:singleLine="true"
+            android:textColorHint="@color/black">
+        </EditText>
+
+        <EditText
+            android:id="@+id/contactno"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:hint="Enter Your Contact-No: "
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:singleLine="true"
+            android:inputType="number"
+            android:textColorHint="@color/black">
+        </EditText>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:hint="Enter Your Password: "
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textColorHint="@color/black">
+        </EditText>
+
+        <EditText
+            android:id="@+id/confirmpassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:hint="Confirm Your Password: "
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textColorHint="@color/black">
+        </EditText>
 
 
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:fontFamily="serif-monospace"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:background="@android:color/darker_gray"
-        android:text="SIGN UP"/>
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:background="@android:color/darker_gray"
+            android:text="SIGN UP"/>
 
 
-</LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
