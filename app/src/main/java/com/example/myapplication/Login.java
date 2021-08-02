@@ -75,9 +75,5 @@ public class Login extends AppCompatActivity {
 
             }
         });
-        String strusername = getIntent().getStringExtra("username");
-        String strEmail = getIntent().getStringExtra("Email");
-
-        username.setText(strusername);
     }
 }

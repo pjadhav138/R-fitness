@@ -111,6 +111,7 @@
             android:id="@+id/submit"
             android:layout_width="200dp"
             android:layout_height="60dp"
+            android:textFontWeight="500"
             android:fontFamily="serif-monospace"
             android:textStyle="bold"
             android:layout_gravity="center"
