@@ -2,8 +2,10 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,11 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapplication.Cutom.MyTextView;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Signup extends AppCompatActivity {
-    EditText Username, Name, Emailid, contactno, password, confirmpassword;
+    MyTextView Username;
+    EditText Name, Emailid, contactno, password, confirmpassword;
     Button submit;
     String TAG = getClass().getSimpleName();
 
@@ -23,8 +28,8 @@ public class Signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
-        Username = findViewById(R.id.username);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Bold.ttf");
+        Username = (MyTextView) findViewById(R.id.username);
         Name = findViewById(R.id.name);
         Emailid = findViewById(R.id.Emailid);
         contactno = findViewById(R.id.contactno);
@@ -32,6 +37,9 @@ public class Signup extends AppCompatActivity {
         confirmpassword = findViewById(R.id.confirmpassword);
         submit = findViewById(R.id.submit);
 
+//        Name.setTypeface(font);
+//        Username.setTypeface(font);
+//        Name.setTypeface(font);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +97,7 @@ public class Signup extends AppCompatActivity {
                     SessionList.put(Username.getText().toString(), Session);
                     editor.putString("Sessionlist", SessionList.toString());
                     editor.commit();
-                    startActivity(new Intent(Signup.this, Login.class).putExtra("username",Username.getText().toString()).putExtra("Email",Emailid.getText().toString()));
+                    startActivity(new Intent(Signup.this, Login.class).putExtra("username", Username.getText().toString()).putExtra("Email", Emailid.getText().toString()));
                     Log.e(TAG, Session.toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
