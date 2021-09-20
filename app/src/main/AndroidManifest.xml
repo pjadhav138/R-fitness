@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".LogorReg"></activity>
+        <activity android:name=".RelativeExample"></activity>
+        <activity android:name=".LogorReg" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".Splashactivity" />
         <activity android:name=".MainActivity" />

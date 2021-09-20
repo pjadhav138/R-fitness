@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.Cutom.MyTextView;
@@ -22,6 +23,7 @@ public class Signup extends AppCompatActivity {
     MyTextView Username;
     EditText Name, Emailid, contactno, password, confirmpassword;
     Button submit;
+    TextView go_to_login;
     String TAG = getClass().getSimpleName();
 
     @Override
@@ -35,7 +37,15 @@ public class Signup extends AppCompatActivity {
         contactno = findViewById(R.id.contactno);
         password = findViewById(R.id.password);
         confirmpassword = findViewById(R.id.confirmpassword);
+        go_to_login = findViewById(R.id.go_to_login);
         submit = findViewById(R.id.submit);
+        go_to_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Signup.this,Login.class));
+                finish();
+            }
+        });
 
 //        Name.setTypeface(font);
 //        Username.setTypeface(font);

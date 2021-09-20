@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.wifi.hotspot2.pps.HomeSp;
@@ -36,42 +38,56 @@ public class Login extends AppCompatActivity {
                 String strusername = username.getText().toString();
                 SharedPreferences preferences = getSharedPreferences("R-FIT", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("username",strusername);
+                editor.putString("username", strusername);
                 editor.commit();
 
                 String list = preferences.getString("Sessionlist", "");
                 JSONObject SessionList;
-                Log.e("msg",list);
+                Log.e("msg", list);
                 try {
                     SessionList = new JSONObject(list);
-                    if (SessionList.has(username.getText().toString())){
-                        JSONObject singleSession =SessionList.getJSONObject(username.getText().toString());
+                    if (SessionList.has(username.getText().toString())) {
+                        JSONObject singleSession = SessionList.getJSONObject(username.getText().toString());
                         String Emailid = singleSession.getString("Emailid");
                         String name = singleSession.getString("Name");
                         String ContactNo = singleSession.getString("Contactno");
-                        SharedPreferences preferences1= getSharedPreferences("R-FIT",MODE_PRIVATE);
+                        SharedPreferences preferences1 = getSharedPreferences("R-FIT", MODE_PRIVATE);
                         SharedPreferences.Editor editor1 = preferences1.edit();
-                        editor1.putString("Emailid",Emailid);
-                        editor1.putString("Name",name);
-                        editor1.putString("ConatactNo",ContactNo);
+                        editor1.putString("Emailid", Emailid);
+                        editor1.putString("Name", name);
+                        editor1.putString("ConatactNo", ContactNo);
                         editor1.commit();
-                        if (singleSession.getString("Password").equals(password.getText().toString())){
-
-                            startActivity(new Intent(Login.this, HOME.class));
-                        }
-                          else {
+                        if (singleSession.getString("Password").equals(password.getText().toString())) {
+                            startActivity(new Intent(Login.this, RelativeExample.class));
+                            finish();
+                        } else {
                             Toast.makeText(Login.this, "Username or Password does not match.Kindly check or signup if you are new here.!", Toast.LENGTH_LONG);
-
+                            AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
+                            alert.setCancelable(false);
+                            alert.setTitle("Username or Password does not match.");
+                            alert.setMessage("Kindly check or signup if you are new here.!");
+                            alert.setPositiveButton("Goto SignUp", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    startActivity(new Intent(Login.this, Signup.class));
+                                }
+                            });
+                            alert.setNegativeButton("Cancel ", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                            alert.create();
+                            alert.show();
                         }
 
                     }
 
 
-
-                }catch (JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
 
 
             }
