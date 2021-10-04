@@ -26,50 +26,43 @@
 
 
     </androidx.appcompat.widget.Toolbar>
-
-    <TableLayout
+    <AutoCompleteTextView
+        android:id="@+id/contry"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <TableRow android:layout_width="wrap_content">
+    </AutoCompleteTextView>
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:buttonTint="@android:color/holo_red_dark"
+        android:textSize="20sp"
+        android:text="Are you agreed to terms and conditions?"
+        android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="text1"></TextView>
+    </CheckBox>
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="match_parent"
+            android:text="Male"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/female"
+            android:text="Female"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="text2"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-                android:text="text3"></TextView>
-        </TableRow>
-
-        <TableRow android:layout_width="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="text1"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="text2"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-                android:text="text3"></TextView>
-        </TableRow>
-
-    </TableLayout>
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_margin="30dp"
+        android:text="submit"
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>
